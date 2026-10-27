@@ -1,3 +1,5 @@
+import 'package:news_app/core/constants/news_category.dart';
+
 import '../models/article.dart';
 import '../services/news_api_service.dart';
 

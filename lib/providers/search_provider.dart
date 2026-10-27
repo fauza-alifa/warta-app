@@ -6,6 +6,4 @@
 // 3. Buat fungsi search(String query) untuk memanggil NewsRepository.searchArticles() dan menyimpan hasilnya di state
 // 4. Buat searchProvider (AsyncNotifierProvider) untuk digunakan di UI
 
-class SearchNotifier {
-  // Siswi akan membuat AsyncNotifier untuk Riverpod
-}
+class SearchNotifier {}

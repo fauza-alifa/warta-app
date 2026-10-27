@@ -8,6 +8,4 @@
 // 5. Buat fungsi isBookmarked(Article article) untuk mengecek apakah artikel sudah ada di bookmark
 // 6. Buat bookmarkProvider (AsyncNotifierProvider) untuk digunakan di UI
 
-class BookmarkNotifier {
-  // Siswi akan membuat AsyncNotifier untuk Riverpod
-}
+class BookmarkNotifier {}

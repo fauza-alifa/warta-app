@@ -29,6 +29,6 @@ final selectedCategoryProvider = NotifierProvider<SelectedCategoryNotifier, News
 // use function `.family` so the result of each category in cache (data trash) when user back to the same category 
 // data will directly show up without repeating request (without GET API)
 
-final headlinesProvider = FutureProvider.family<List<Article>, String>((ref, category) {
+final headlinesProvider = FutureProvider.family<List<Article>, NewsCategory>((ref, category) {
   return ref.watch(newsRepositoryProvider).getTopHeadlines(category);
 });

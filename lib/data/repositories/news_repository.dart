@@ -14,8 +14,8 @@ class NewsRepository {
   
   final NewsApiService _apiService;
 
-  Future<List<Article>> getTopHeadlines(String category) async {
-    return _apiService.fetchTopHeadlines(category);
+  Future<List<Article>> getTopHeadlines(NewsCategory category) async {
+    return _apiService.fetchTopHeadlines(category.apiValue);
   }
 
   Future<List<Article>> searchArticles(String query) async {

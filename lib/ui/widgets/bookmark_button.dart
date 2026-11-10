@@ -15,11 +15,14 @@ class BookmarkButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // State sementara
-    bool isSaved = article.url.isEmpty; // Mencegah dead-code warning
+    final bookmarks = ref.watch(bookmarksProvider);
+    final isSaved = bookmarks.any(
+      (item) => item.url == article.url,
+    );
+    
     void onPressed() {
-      // TODO: Panggil method toggle() dari bookmarksProvider
-      ref.read(bookmarksProvider);
+      // Panggil method toggle() dari bookmarksProvider
+      ref.read(bookmarksProvider.notifier).toggle(article);
     }
     
     final tooltip = isSaved ? 'Hapus dari Tersimpan' : 'Simpan';

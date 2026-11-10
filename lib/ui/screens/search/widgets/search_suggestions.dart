@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// TODO: Ubah SearchSuggestions menjadi ConsumerWidget
-class SearchSuggestions extends StatelessWidget {
+class SearchSuggestions extends ConsumerWidget {
   const SearchSuggestions({super.key});
 
   static const _topics = [
@@ -16,7 +17,7 @@ class SearchSuggestions extends StatelessWidget {
   ];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
 
     return ListView(

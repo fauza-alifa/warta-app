@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // TODO: Ubah menjadi ConsumerWidget saat Riverpod diimplementasikan
-class AppNavigationBar extends StatelessWidget {
+class AppNavigationBar extends ConsumerWidget {
   const AppNavigationBar({
     super.key,
     required this.currentIndex,
@@ -12,7 +13,7 @@ class AppNavigationBar extends StatelessWidget {
   final ValueChanged<int> onTap;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     // TODO: Ambil jumlah bookmark dari provider
     final bookmarkCount = 0;
 

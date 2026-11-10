@@ -30,7 +30,7 @@ class ThemeNotifier extends Notifier<ThemeMode> {
 }
 
 // focus on how to give notification when there is changed state
-// TODO = declare a notifier to tell the state that changed
+// declare a notifier to tell the state that changed
 // so the app will know if there will be change that will happen in theme
 final themeModeProvider = NotifierProvider<ThemeNotifier, ThemeMode>(
   ThemeNotifier.new,

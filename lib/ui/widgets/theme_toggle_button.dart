@@ -14,8 +14,8 @@ class ThemeToggleButton extends ConsumerWidget {
     return IconButton(
       tooltip: isDark ? 'Mode terang' : 'Mode gelap',
       onPressed: () {
-        // TODO: Panggil method toggle dari themeModeProvider
-        ref.read(themeModeProvider);
+        // Panggil method toggle dari themeModeProvider
+        ref.read(themeModeProvider.notifier).toggle(brightness);
       },
       icon: AnimatedSwitcher(
         duration: const Duration(milliseconds: 300),

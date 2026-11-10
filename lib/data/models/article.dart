@@ -53,7 +53,7 @@ class Article {
       publishedAt: DateTime.tryParse(json['publishedAt'] as String? ?? ''),
       author: json['author'] as String?,
       description: json['description'] as String?,
-      imageUrl: json['imageUrl'] as String?,
+      imageUrl: json['urlToImage'] as String?,
       content: json['content'] as String?,
     );
   }

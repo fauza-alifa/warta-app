@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:news_app/providers/search_provider.dart';
 
 /// TODO: Ubah SearchSuggestions menjadi ConsumerWidget
 class SearchSuggestions extends ConsumerWidget {
@@ -34,7 +35,8 @@ class SearchSuggestions extends ConsumerWidget {
                 avatar: const Icon(Icons.trending_up_rounded, size: 18),
                 label: Text(topic),
                 onPressed: () {
-                  // TODO: submit topik ke searchQueryProvider
+                  // submit topik ke searchQueryProvider
+                  ref.read(searchQueryProvider.notifier).submit(topic);
                 },
               ),
           ],

@@ -14,22 +14,26 @@ class SearchQueryNotifier extends Notifier<String> {
   @override
   String build() => '';
 
+  // run when user click enter
   void submit(String query) => state = query.trim();
 
   void clear() => state = '';
 }
 
 
-final SearchQueryProvider = NotifierProvider<SearchQueryNotifier, String>(
+final searchQueryProvider = NotifierProvider<SearchQueryNotifier, String>(
   SearchQueryNotifier.new,
 );
 
-// result of search: automatically re-fetch every time query changes
+// control the result of search: automatically re-fetch every time query changes
 final searchResultProvider = FutureProvider.autoDispose<List<Article>>((
   ref,
 ) async {
-  final query = ref.watch(SearchQueryProvider);
+  final query = ref.watch(searchQueryProvider);
 
   if (query.isEmpty) return [];
   return ref.watch(newsRepositoryProvider).searchArticles(query);
 });
+
+// alias so it can be accessed with the name searchResultProvider or searchResultsProvider
+final searchResultsProvider = searchResultProvider;

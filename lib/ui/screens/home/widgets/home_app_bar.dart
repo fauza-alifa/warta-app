@@ -37,7 +37,7 @@ class HomeAppBar extends ConsumerWidget {
           icon: const Icon(Icons.search_rounded),
           onPressed: () {
             // TODO: Gunakan ref.read(navigationProvider) untuk pindah ke tab search
-            ref.read(navigationProvider);
+            ref.read(navigationProvider.notifier).select(1);
           },
         ),
         const SizedBox(width: 8),
